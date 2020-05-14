@@ -12,3 +12,52 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
+
+// Global link control
+a {
+  text-decoration: none;
+  // color: $dark-color;
+}
+
+// Global button control
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+}
+
+// Image Styles
+.round-img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+// Backgrouds
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+  &-secondary {
+    @include set-background($secondary-color);
+  }
+  &-light {
+    @include set-background($light-color);
+  }
+  &-dark {
+    @include set-background($dark-color);
+  }
+  &-white {
+    @include set-background(white);
+  }
+  &-success {
+    @include set-background($success-color);
+  }
+  &-danger {
+    @include set-background($danger-color);
+  }
+}

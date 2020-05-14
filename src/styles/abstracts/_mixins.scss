@@ -1,0 +1,6 @@
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  // color below doesn't apply to links, will only apply to text color
+  color: set-text-color($color);
+}

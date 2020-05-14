@@ -1,1 +1,9 @@
+@import './styles/abstracts/variables';
+@import './styles/abstracts/functions';
+@import './styles/abstracts/mixins';
+
 @import './styles/base/typography';
+
+@import './styles/layout/containers';
+@import './styles/layout/header';
+@import './styles/layout/sidebar';
