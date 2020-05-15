@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import avatar from '../../assets/images/avatar.png';
 import { HeaderItem } from './HeaderItem';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { FontIcon, FontIconModule } from '../Enums';
+import { FontIcon, FontIconModule, Themes } from '../Enums';
+import { ThemeContext } from '../ThemeContext';
 
 interface HeaderProps {
   sidebarToggleClicked: () => void;
@@ -10,9 +11,27 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
-  type IconName = { iconName: IconProp };
+  const { theme } = useContext(ThemeContext);
 
-  const headerItemsCenter: IconName[] = [
+  let themeClass: string;
+  switch (theme) {
+    case Themes.Blue:
+      themeClass = 'theme-blue';
+      break;
+    case Themes.Grey:
+      themeClass = 'theme-grey';
+      break;
+    case Themes.Maroon:
+      themeClass = 'theme-maroon';
+      break;
+    default:
+      themeClass = '';
+      break;
+  }
+
+  type HeaderIconCenterProp = { iconName: IconProp; showOnHover?: Boolean };
+
+  const headerItemsCenter: HeaderIconCenterProp[] = [
     {
       iconName: [FontIconModule.Regular, FontIcon.LifeRing],
     },
@@ -21,6 +40,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
     },
     {
       iconName: FontIcon.Bell,
+      showOnHover: true,
     },
   ];
 
@@ -29,7 +49,8 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
       <div
         className={'masthead-container-start bg-dark'.concat(
           ' ',
-          show ? '' : 'masthead-container-start-narrow'
+          show ? '' : 'masthead-container-start-narrow ',
+          themeClass
         )}
       >
         {show && <p className="masthead-container-start-bold">trevor dash</p>}
@@ -39,11 +60,17 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
           clicked={sidebarToggleClicked}
         />
       </div>
-      <div className="masthead-container-center">
+      <div
+        className={'masthead-container-center'.concat(
+          ' ',
+          themeClass,
+          '-color'
+        )}
+      >
         <div></div>
         <ul>
           {headerItemsCenter.map(
-            (cur: IconName): JSX.Element => (
+            (cur: HeaderIconCenterProp): JSX.Element => (
               <li
                 className="masthead-container-center-item"
                 key={
@@ -55,6 +82,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
                 <HeaderItem
                   className="masthead-container-center-font-item"
                   icon={cur.iconName}
+                  showOnHover={cur.showOnHover}
                 />
               </li>
             )
@@ -64,7 +92,11 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
       <div className="masthead-container-end">
         <p>Trevor Bai</p>
         <HeaderItem
-          className="masthead-container-end-font-item"
+          className={'masthead-container-end-font-item'.concat(
+            ' ',
+            themeClass,
+            '-color'
+          )}
           icon={FontIcon.AngleDown}
         />
         <img className="round-img" src={avatar} alt="Avatar" />

@@ -9,6 +9,30 @@
   justify-content: space-between;
   width: 100%;
 
+  .theme-blue {
+    @include set-background($dark-color-blue);
+  }
+
+  .theme-blue-color {
+    color: $primary-color-blue;
+  }
+
+  .theme-grey {
+    @include set-background($dark-color-grey);
+  }
+
+  .theme-grey-color {
+    color: $primary-color-grey;
+  }
+
+  .theme-maroon {
+    @include set-background($dark-color-maroon);
+  }
+
+  .theme-maroon-color {
+    color: $primary-color-maroon;
+  }
+
   &-start {
     display: flex;
     padding: 1.5rem;
@@ -47,11 +71,46 @@
     }
 
     &-item {
+      display: flex;
       padding: 0 1rem;
+      position: relative;
+
+      &:hover .masthead-container-center-notifications-message {
+        display: block;
+      }
+
+      &:hover .triangle-up {
+        display: block;
+      }
     }
 
     &-font-item {
       font-size: 1.3rem;
+    }
+
+    &-notifications-message {
+      display: none;
+      position: absolute;
+      white-space: nowrap;
+      top: 2rem;
+      right: 0.6rem;
+      padding: 0.2rem 0.7rem;
+
+      //##########################
+      border-radius: 5px;
+      //##########################
+    }
+
+    .triangle-up {
+      display: none;
+      position: absolute;
+      top: 1.4rem;
+      right: 1.2rem;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid $dark-color;
     }
   }
 
@@ -63,10 +122,12 @@
 
     p {
       padding: 0 1.7rem;
+      font-weight: 400;
     }
 
     &-font-item {
       font-size: 1.3rem;
+      color: $primary-color;
     }
 
     img {

@@ -24,6 +24,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from './hoc/Layout';
 import MainPage from './pages/MainPage';
+import SettingsPage from './pages/SettingsPage';
 
 library.add(
   far,
@@ -51,6 +52,7 @@ const App: React.FC = (): JSX.Element => {
   const routes = (
     <Switch>
       <Route path="/" exact component={MainPage} />
+      <Route path="/settings" render={(props) => <SettingsPage {...props} />} />
     </Switch>
   );
 

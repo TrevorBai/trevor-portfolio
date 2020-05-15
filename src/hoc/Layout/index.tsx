@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
+import { Themes } from '../../components/Enums';
+import { ThemeContext } from '../../components/ThemeContext';
 
 interface LayoutProps {
   children: JSX.Element;
@@ -8,18 +10,19 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   const [show, setShow] = useState(true);
+  const [theme, setTheme] = useState<Themes>(Themes.Green);
   const sidebarToggleHandler = () => {
     setShow(!show);
   };
 
   return (
-    <React.Fragment>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <Header sidebarToggleClicked={sidebarToggleHandler} show={show} />
       <div className="container bg-light">
-        <Sidebar />
+        <Sidebar show={show} />
         <main>{children}</main>
       </div>
-    </React.Fragment>
+    </ThemeContext.Provider>
   );
 };
 

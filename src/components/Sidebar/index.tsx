@@ -4,72 +4,82 @@ import { FontIconLabel, FontIcon, Routes, FontIconModule } from '../Enums';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { SidebarItemProps } from './SidebarItem';
 
-const Sidebar = () => {
+interface SidebarProps {
+  show: boolean;
+}
 
+const Sidebar: React.FC<SidebarProps> = ({ show }) => {
   const sidebarItems: SidebarItemProps[] = [
     {
       label: FontIconLabel.Home,
       iconName: FontIcon.Home,
-      link: Routes.Home
+      link: Routes.Home,
     },
     {
       label: FontIconLabel.Dashboard,
       iconName: FontIcon.ChartBar,
-      link: Routes.Dashboard
+      link: Routes.Dashboard,
     },
     {
       label: FontIconLabel.AboutMe,
       iconName: [FontIconModule.Regular, FontIcon.User],
-      link: Routes.AboutMe
+      link: Routes.AboutMe,
     },
     {
       label: FontIconLabel.Products,
       iconName: FontIcon.ToriiGate,
-      link: Routes.Products
+      link: Routes.Products,
     },
     {
       label: FontIconLabel.Invoices,
       iconName: FontIcon.Receipt,
-      link: Routes.Invoices
+      link: Routes.Invoices,
     },
     {
       label: FontIconLabel.MailMarketing,
       iconName: [FontIconModule.Regular, FontIcon.Envelope],
-      link: Routes.MailMarketing
+      link: Routes.MailMarketing,
     },
     {
       label: FontIconLabel.ChatRoom,
       iconName: [FontIconModule.Brands, FontIcon.RocketChat],
-      link: Routes.ChatRoom
+      link: Routes.ChatRoom,
     },
     {
       label: FontIconLabel.Calendar,
       iconName: FontIcon.Calendar,
-      link: Routes.Calendar
+      link: Routes.Calendar,
     },
     {
       label: FontIconLabel.HelpCenter,
       iconName: [FontIconModule.Regular, FontIcon.LifeRing],
-      link: Routes.HelpCenter
+      link: Routes.HelpCenter,
     },
     {
       label: FontIconLabel.Settings,
       iconName: FontIcon.Cog,
-      link: Routes.Settings
+      link: Routes.Settings,
     },
   ];
 
   return (
-    <nav className="bg-secondary sidebar">
+    <nav
+      className={'bg-secondary sidebar'.concat(
+        ' ',
+        show ? '' : 'sidebar-narrow'
+      )}
+    >
       <ul>
-        {sidebarItems.map((cur: SidebarItemProps): JSX.Element => (
-          <SidebarItem
-            key={cur.label}
-            link={cur.link}
-            iconName={cur.iconName as IconProp}
-            label={cur.label}
-          />
-        ))}
+        {sidebarItems.map(
+          (cur: SidebarItemProps): JSX.Element => (
+            <SidebarItem
+              key={cur.label}
+              link={cur.link}
+              iconName={cur.iconName as IconProp}
+              label={cur.label}
+            />
+          )
+        )}
       </ul>
     </nav>
   );

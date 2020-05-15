@@ -1,3 +1,6 @@
+// import theme class to overwrite $primary-color
+@import './styles/themes/theme';
+
 @import './styles/abstracts/variables';
 @import './styles/abstracts/functions';
 @import './styles/abstracts/mixins';
