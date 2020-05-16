@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import avatar from '../../assets/images/avatar.png';
 import { HeaderItem } from './HeaderItem';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { FontIcon, FontIconModule, Themes } from '../Enums';
+import { FontIcon, FontIconModule } from '../../utilities/Enums';
 import { ThemeContext } from '../ThemeContext';
+import { themeEnumToClass } from '../../utilities';
 
 interface HeaderProps {
   sidebarToggleClicked: () => void;
@@ -13,21 +14,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
   const { theme } = useContext(ThemeContext);
 
-  let themeClass: string;
-  switch (theme) {
-    case Themes.Blue:
-      themeClass = 'theme-blue';
-      break;
-    case Themes.Grey:
-      themeClass = 'theme-grey';
-      break;
-    case Themes.Maroon:
-      themeClass = 'theme-maroon';
-      break;
-    default:
-      themeClass = '';
-      break;
-  }
+  const themeClass = themeEnumToClass(theme);
 
   type HeaderIconCenterProp = { iconName: IconProp; showOnHover?: Boolean };
 

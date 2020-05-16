@@ -1,11 +1,77 @@
-.maroonTheme {
-  $primary-color: #d8b3ac;
+// **************************************************************
+//                  Theme Classes
+// **************************************************************
+.theme-blue {
+  @include set-background($dark-color-blue);
+
+  &-color {
+    color: $primary-color-blue;
+  }
+
+  &-secondary {
+    @include set-background($secondary-color-blue);
+
+    a.active {
+      border-left: 5px solid $third-color-blue;
+      @include set-background($dark-color-blue);
+
+      .sidebar-font-item {
+        color: $third-color-blue;
+      }
+    }
+  }
+
+  &-light {
+    @include set-background($light-color-blue);
+  }
 }
 
-.blueTheme {
-  $primary-color: #acb9d8;
+.theme-grey {
+  @include set-background($dark-color-grey);
+
+  &-color {
+    color: $primary-color-grey;
+  }
+
+  &-secondary {
+    @include set-background($secondary-color-grey);
+
+    a.active {
+      border-left: 5px solid $third-color-grey;
+      @include set-background($dark-color-grey);
+
+      .sidebar-font-item {
+        color: $third-color-grey;
+      }
+    }
+  }
+
+  &-light {
+    @include set-background($light-color-grey);
+  }
 }
 
-.greyTheme {
-  $primary-color: #cecece;
+.theme-maroon {
+  @include set-background($dark-color-maroon);
+
+  &-color {
+    color: $primary-color-maroon;
+  }
+
+  &-secondary {
+    @include set-background($secondary-color-maroon);
+
+    a.active {
+      border-left: 5px solid $third-color-maroon;
+      @include set-background($dark-color-maroon);
+
+      .sidebar-font-item {
+        color: $third-color-maroon;
+      }
+    }
+  }
+
+  &-light {
+    @include set-background($light-color-maroon);
+  }
 }

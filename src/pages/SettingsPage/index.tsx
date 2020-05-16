@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { Themes } from '../../components/Enums';
+import { Themes } from '../../utilities/Enums';
 import { ThemeContext } from '../../components/ThemeContext';
 
 const SettingsPage: React.FC<RouteComponentProps> = () => {

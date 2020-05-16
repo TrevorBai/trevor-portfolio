@@ -12,7 +12,7 @@ export interface SidebarItemProps {
 const SidebarItem: React.FC<SidebarItemProps> = ({ link, iconName, label }) => {
   return (
     <li>
-      <NavLink to={link} className="" exact>
+      <NavLink to={link} exact>
         <div className="sidebar-inner">
           <div className="sidebar-font-item">
             <FontAwesomeIcon icon={iconName} size="lg" />

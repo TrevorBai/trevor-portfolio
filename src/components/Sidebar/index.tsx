@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SidebarItem from './SidebarItem';
-import { FontIconLabel, FontIcon, Routes, FontIconModule } from '../Enums';
+import { FontIconLabel, FontIcon, Routes, FontIconModule } from '../../utilities/Enums';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { SidebarItemProps } from './SidebarItem';
+import { ThemeContext } from '../ThemeContext';
+import { themeEnumToClass } from '../../utilities';
 
 interface SidebarProps {
   show: boolean;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ show }) => {
+
+  const { theme } = useContext(ThemeContext);
+  const themeClass = themeEnumToClass(theme);
+
   const sidebarItems: SidebarItemProps[] = [
     {
       label: FontIconLabel.Home,
@@ -66,7 +72,9 @@ const Sidebar: React.FC<SidebarProps> = ({ show }) => {
     <nav
       className={'bg-secondary sidebar'.concat(
         ' ',
-        show ? '' : 'sidebar-narrow'
+        show ? '' : 'sidebar-narrow ',
+        themeClass,
+        '-secondary'
       )}
     >
       <ul>
