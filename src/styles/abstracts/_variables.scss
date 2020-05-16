@@ -3,31 +3,19 @@
 // **************************************************************
 // Default theme (Green)
 $primary-color: #acd8b5;
-$secondary-color: darken($primary-color, 45%);
-$third-color: darken($primary-color, 25%);
-$dark-color: darken($primary-color, 55%);
-$light-color: lighten($primary-color, 20%);
+$secondary-color: color-set($primary-color, 'secondary');
+$third-color: color-set($primary-color, 'third');
+$dark-color: color-set($primary-color, 'dark');
+$light-color: color-set($primary-color, 'light');
 
 // Theme Maroon
 $primary-color-maroon: #d8b3ac;
-$secondary-color-maroon: darken($primary-color-maroon, 45%);
-$third-color-maroon: darken($primary-color-maroon, 25%);
-$dark-color-maroon: darken($primary-color-maroon, 55%);
-$light-color-maroon: lighten($primary-color-maroon, 20%);
 
 // Theme Blue
 $primary-color-blue: #acb9d8;
-$secondary-color-blue: darken($primary-color-blue, 45%);
-$third-color-blue: darken($primary-color-blue, 25%);
-$dark-color-blue: darken($primary-color-blue, 55%);
-$light-color-blue: lighten($primary-color-blue, 20%);
 
 // Theme Grey
 $primary-color-grey: #c3c3c3;
-$secondary-color-grey: darken($primary-color-grey, 45%);
-$third-color-grey: darken($primary-color-grey, 25%);
-$dark-color-grey: darken($primary-color-grey, 55%);
-$light-color-grey: lighten($primary-color-grey, 20%);
 
 // Colors Generic
 $danger-color: #dc3545;

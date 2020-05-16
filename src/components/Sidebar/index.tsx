@@ -1,8 +1,12 @@
 import React, { useContext } from 'react';
 import SidebarItem from './SidebarItem';
-import { FontIconLabel, FontIcon, Routes, FontIconModule } from '../../utilities/Enums';
+import {
+  FontIconLabel,
+  FontIcon,
+  Routes,
+  FontIconModule,
+} from '../../utilities/Enums';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { SidebarItemProps } from './SidebarItem';
 import { ThemeContext } from '../ThemeContext';
 import { themeEnumToClass } from '../../utilities';
 
@@ -11,11 +15,16 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ show }) => {
-
   const { theme } = useContext(ThemeContext);
   const themeClass = themeEnumToClass(theme);
 
-  const sidebarItems: SidebarItemProps[] = [
+  type LocalSidebarItemProps = {
+    link: string;
+    iconName: IconProp;
+    label: string;
+  };
+
+  const sidebarItems: LocalSidebarItemProps[] = [
     {
       label: FontIconLabel.Home,
       iconName: FontIcon.Home,
@@ -74,17 +83,18 @@ const Sidebar: React.FC<SidebarProps> = ({ show }) => {
         ' ',
         show ? '' : 'sidebar-narrow ',
         themeClass,
-        '-secondary'
+        themeClass && '-secondary'
       )}
     >
       <ul>
         {sidebarItems.map(
-          (cur: SidebarItemProps): JSX.Element => (
+          (cur: LocalSidebarItemProps): JSX.Element => (
             <SidebarItem
               key={cur.label}
               link={cur.link}
               iconName={cur.iconName as IconProp}
               label={cur.label}
+              show={show}
             />
           )
         )}

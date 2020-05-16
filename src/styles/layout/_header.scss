@@ -16,9 +16,21 @@
     height: 100%;
     width: 260px;
     white-space: nowrap;
+    @include transition(width);
+
+    &-animation-left {
+      @include slide-animation(
+        fromleftmove-mastheadcontainerstart,
+        30%,
+        0,
+        left
+      );
+    }
 
     &-narrow {
       width: 78px;
+      padding-left: 1.7rem;
+      @include transition(width);
     }
 
     &-bold {
@@ -36,10 +48,22 @@
   &-center {
     display: flex;
     padding: 0.3rem 0.5rem;
+    height: 35px;
     flex: 1;
     justify-content: space-between;
+    align-items: center;
     border-right: 2px solid;
     color: $primary-color;
+
+    &-bold {
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25rem;
+      padding-left: 1.5rem;
+      padding-top: .1rem;
+      color: $secondary-color;
+    }
 
     ul {
       display: flex;

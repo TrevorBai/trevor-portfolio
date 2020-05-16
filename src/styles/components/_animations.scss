@@ -1,0 +1,25 @@
+// **************************************************************
+//                  React Transition Group
+// **************************************************************
+// sidebar label animation
+.sideBarLabel-enter {
+  opacity: 0;
+}
+
+.sideBarLabel-enter-active {
+  opacity: 1;
+  @include transition(opacity, ease-in-out);
+}
+
+.sideBarLabel-exit {
+  opacity: 1;
+}
+
+.sideBarLabel-exit-active {
+  opacity: 0;
+  @include transition(opacity, ease-in-out);
+}
+
+.sideBarLabel-exit-done {
+  display: none;
+}

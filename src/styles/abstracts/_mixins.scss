@@ -1,6 +1,74 @@
 // Set background & text color
-@mixin set-background($color) {
+@mixin background-set($color) {
   background-color: $color;
   // color below doesn't apply to links, will only apply to text color
-  color: set-text-color($color);
+  color: text-color-set($color);
+}
+
+// CSS transition mixin
+@mixin transition($property, $timing-function: ease-out, $duration: 0.2s) {
+  //**********************************************************
+  transition: #{$property} #{$duration} #{$timing-function};
+  -webkit-transition: #{$property} #{$duration} #{$timing-function};
+  -moz-transition: #{$property} #{$duration} #{$timing-function};
+  -ms-transition: #{$property} #{$duration} #{$timing-function};
+  -o-transition: #{$property} #{$duration} #{$timing-function};
+  //**********************************************************
+}
+
+// CSS transform mixin
+@mixin transform($direction, $offset) {
+  @if $direction == x {
+    //**********************************************************
+    transform: translateX($offset);
+    -webkit-transform: translateX($offset);
+    -moz-transform: translateX($offset);
+    -ms-transform: translateX($offset);
+    -o-transform: translateX($offset);
+    //**********************************************************
+  } @else if $direction == y {
+    //**********************************************************
+    transform: translateY($offset);
+    -webkit-transform: translateY($offset);
+    -moz-transform: translateY($offset);
+    -ms-transform: translateY($offset);
+    -o-transform: translateY($offset);
+    //**********************************************************
+  } @else {
+    @error "#{$direction} has not defined.";
+  }
+}
+
+// CSS animation mixin
+@mixin slide-animation($name, $from, $to, $direction, $duration: 0.2s) {
+  // name duration timing-function delay (iteration-count) direction
+  animation: #{$name} #{$duration} ease-in-out 0s forwards;
+  -webkit-animation: #{$name} #{$duration} ease-in-out 0s forwards;
+  animation-fill-mode: backwards;
+
+  @if $direction == left {
+    @keyframes #{$name} {
+      0% {
+        opacity: 1;
+        @include transform(x, -$from);
+      }
+      100% {
+        opacity: 1;
+        @include transform(x, $to);
+      }
+    }
+
+    @-webkit-keyframes #{$name} {
+      0% {
+        opacity: 1;
+        @include transform(x, -$from);
+      }
+      100% {
+        opacity: 1;
+        @include transform(x, $to);
+      }
+    }
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
 }

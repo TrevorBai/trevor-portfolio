@@ -5,13 +5,21 @@
   overflow: auto;
   width: 260px;
   height: calc(100vh - 80px);
+  @include transition(width);
 
   &::-webkit-scrollbar {
     display: none;
   }
 
+  &-narrow {
+    width: 78px;
+    display: flex;
+    @include transition(width);
+  }
+
   &-inner {
     display: flex;
+    height: 25px; // fonticon has slightly smaller height
   }
 
   a {
@@ -19,10 +27,11 @@
     color: inherit;
     padding: 1.2rem 0.5rem 1.2rem 1.2rem;
     border-left: 5px solid transparent;
+    white-space: nowrap;
 
     &.active {
       border-left: 5px solid $third-color;
-      @include set-background($dark-color);
+      @include background-set($dark-color);
 
       .sidebar-font-item {
         color: $third-color;

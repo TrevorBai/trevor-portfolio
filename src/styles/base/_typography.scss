@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -39,24 +39,24 @@ button {
 // Backgrouds
 .bg {
   &-primary {
-    @include set-background($primary-color);
+    @include background-set($primary-color);
   }
   &-secondary {
-    @include set-background($secondary-color);
+    @include background-set($secondary-color);
   }
   &-light {
-    @include set-background($light-color);
+    @include background-set($light-color);
   }
   &-dark {
-    @include set-background($dark-color);
+    @include background-set($dark-color);
   }
   &-white {
-    @include set-background(white);
+    @include background-set(white);
   }
   &-success {
-    @include set-background($success-color);
+    @include background-set($success-color);
   }
   &-danger {
-    @include set-background($danger-color);
+    @include background-set($danger-color);
   }
 }

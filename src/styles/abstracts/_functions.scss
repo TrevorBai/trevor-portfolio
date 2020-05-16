@@ -1,8 +1,28 @@
 // Set text color based on background color
-@function set-text-color($color) {
+@function text-color-set($color) {
   @if (lightness($color) > 60) {
     @return $dark-color;
   } @else {
     @return $light-color;
+  }
+}
+
+// Theme color getter
+@function deep-map-get($colors, $color, $level) {
+  @return map-get(map-get($colors, $color), $level);
+}
+
+// Theme color gradient
+@function color-set($color, $level) {
+  @if $level == 'secondary' {
+    @return darken($color, 45%);
+  } @else if $level == 'third' {
+    @return darken($color, 25%);
+  } @else if $level == 'dark' {
+    @return darken($color, 55%);
+  } @else if $level == 'light' {
+    @return lighten($color, 20%);
+  } @else {
+    @error 'Unknown color level #{$level}.';
   }
 }

@@ -1,77 +1,58 @@
 // **************************************************************
 //                  Theme Classes
 // **************************************************************
-.theme-blue {
-  @include set-background($dark-color-blue);
+// colors map
+$colors: (
+  'blue': (
+    'primary': $primary-color-blue,
+    'secondary': color-set($primary-color-blue, 'secondary'),
+    'third': color-set($primary-color-blue, 'third'),
+    'dark': color-set($primary-color-blue, 'dark'),
+    'light': color-set($primary-color-blue, 'light'),
+  ),
+  'grey': (
+    'primary': $primary-color-grey,
+    'secondary': color-set($primary-color-grey, 'secondary'),
+    'third': color-set($primary-color-grey, 'third'),
+    'dark': color-set($primary-color-grey, 'dark'),
+    'light': color-set($primary-color-grey, 'light'),
+  ),
+  'maroon': (
+    'primary': $primary-color-maroon,
+    'secondary': color-set($primary-color-maroon, 'secondary'),
+    'third': color-set($primary-color-maroon, 'third'),
+    'dark': color-set($primary-color-maroon, 'dark'),
+    'light': color-set($primary-color-maroon, 'light'),
+  ),
+);
 
-  &-color {
-    color: $primary-color-blue;
-  }
+@each $color, $map in $colors {
+  .theme-#{$color} {
+    @include background-set(deep-map-get($colors, $color, 'dark'));
 
-  &-secondary {
-    @include set-background($secondary-color-blue);
+    &-color {
+      color: deep-map-get($colors, $color, 'primary');
+    }
 
-    a.active {
-      border-left: 5px solid $third-color-blue;
-      @include set-background($dark-color-blue);
+    &-color-secondary {
+      color: deep-map-get($colors, $color, 'secondary');
+    }
 
-      .sidebar-font-item {
-        color: $third-color-blue;
+    &-secondary {
+      @include background-set(deep-map-get($colors, $color, 'secondary'));
+
+      a.active {
+        border-left: 5px solid deep-map-get($colors, $color, 'third');
+        @include background-set(deep-map-get($colors, $color, 'dark'));
+
+        .sidebar-font-item {
+          color: deep-map-get($colors, $color, 'third');
+        }
       }
     }
-  }
 
-  &-light {
-    @include set-background($light-color-blue);
-  }
-}
-
-.theme-grey {
-  @include set-background($dark-color-grey);
-
-  &-color {
-    color: $primary-color-grey;
-  }
-
-  &-secondary {
-    @include set-background($secondary-color-grey);
-
-    a.active {
-      border-left: 5px solid $third-color-grey;
-      @include set-background($dark-color-grey);
-
-      .sidebar-font-item {
-        color: $third-color-grey;
-      }
+    &-light {
+      @include background-set(deep-map-get($colors, $color, 'light'));
     }
-  }
-
-  &-light {
-    @include set-background($light-color-grey);
-  }
-}
-
-.theme-maroon {
-  @include set-background($dark-color-maroon);
-
-  &-color {
-    color: $primary-color-maroon;
-  }
-
-  &-secondary {
-    @include set-background($secondary-color-maroon);
-
-    a.active {
-      border-left: 5px solid $third-color-maroon;
-      @include set-background($dark-color-maroon);
-
-      .sidebar-font-item {
-        color: $third-color-maroon;
-      }
-    }
-  }
-
-  &-light {
-    @include set-background($light-color-maroon);
   }
 }

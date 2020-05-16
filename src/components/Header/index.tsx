@@ -40,7 +40,11 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
           themeClass
         )}
       >
-        {show && <p className="masthead-container-start-bold">trevor dash</p>}
+        {show && (
+          <p className="masthead-container-start-bold masthead-container-start-animation-left">
+            trevor dash
+          </p>
+        )}
         <HeaderItem
           className="masthead-container-start-menu"
           icon={FontIcon.Bars}
@@ -51,10 +55,22 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
         className={'masthead-container-center'.concat(
           ' ',
           themeClass,
-          '-color'
+          themeClass && '-color'
         )}
       >
-        <div></div>
+        <div>
+          {!show && (
+            <p
+              className={'masthead-container-center-bold'.concat(
+                ' ',
+                themeClass,
+                themeClass && '-color-secondary'
+              )}
+            >
+              trevor dash
+            </p>
+          )}
+        </div>
         <ul>
           {headerItemsCenter.map(
             (cur: HeaderIconCenterProp): JSX.Element => (
@@ -82,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
           className={'masthead-container-end-font-item'.concat(
             ' ',
             themeClass,
-            '-color'
+            themeClass && '-color'
           )}
           icon={FontIcon.AngleDown}
         />
