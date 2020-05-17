@@ -1,0 +1,23 @@
+.biography-container {
+  max-width: $max-width;
+  text-align: center;
+  width: 80%;
+  margin: 5rem auto 3rem;
+
+  hr {
+    width: 70%;
+    margin: 2rem auto 0;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $border-light;
+  }
+
+  h1 {
+    margin: 2rem auto;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 40%;
+  }
+}

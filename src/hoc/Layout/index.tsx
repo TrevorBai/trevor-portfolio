@@ -21,9 +21,9 @@ const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <Header sidebarToggleClicked={sidebarToggleHandler} show={show} />
-      <div className={'container bg-light'.concat(' ', themeClass, '-light')}>
+      <div className={'container bg-light'.concat(' ', themeClass, themeClass && '-light')}>
         <Sidebar show={show} />
-        <main>{children}</main>
+        <main className='main-container'>{children}</main>
       </div>
     </ThemeContext.Provider>
   );

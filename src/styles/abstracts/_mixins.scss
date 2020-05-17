@@ -5,6 +5,17 @@
   color: text-color-set($color);
 }
 
+// Border Radius mixin
+@mixin border-radius($radius: 5px) {
+  //***********************************************
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  //***********************************************
+}
+
 // CSS transition mixin
 @mixin transition($property, $timing-function: ease-out, $duration: 0.2s) {
   //**********************************************************
@@ -72,3 +83,4 @@
     @error "Unknown direction #{$direction}.";
   }
 }
+

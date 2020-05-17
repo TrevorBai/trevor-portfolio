@@ -3,7 +3,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { far } from '@fortawesome/free-regular-svg-icons';
-import { fab, faRocketchat } from '@fortawesome/free-brands-svg-icons';
+import { fab, faRocketchat, faAppStore, faChrome } from '@fortawesome/free-brands-svg-icons';
 import {
   faBars,
   faComments,
@@ -21,6 +21,8 @@ import {
   faArrowDown,
   faChartLine,
   faArrowUp,
+  faChess,
+  faFileCsv,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from './hoc/Layout';
 import MainPage from './pages/MainPage';
@@ -45,7 +47,11 @@ library.add(
   faCog,
   faArrowDown,
   faArrowUp,
-  faChartLine
+  faChartLine,
+  faAppStore,
+  faChess,
+  faFileCsv,
+  faChrome
 );
 
 const App: React.FC = (): JSX.Element => {

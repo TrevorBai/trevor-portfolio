@@ -31,19 +31,19 @@ const Sidebar: React.FC<SidebarProps> = ({ show }) => {
       link: Routes.Home,
     },
     {
-      label: FontIconLabel.Dashboard,
-      iconName: FontIcon.ChartBar,
-      link: Routes.Dashboard,
+      label: FontIconLabel.MyWebsites,
+      iconName: [FontIconModule.Brands, FontIcon.Chrome],
+      link: Routes.MyWebsites,
     },
     {
-      label: FontIconLabel.AboutMe,
-      iconName: [FontIconModule.Regular, FontIcon.User],
-      link: Routes.AboutMe,
+      label: FontIconLabel.MyApps,
+      iconName: [FontIconModule.Brands, FontIcon.AppStore],
+      link: Routes.MyApps,
     },
     {
-      label: FontIconLabel.Products,
-      iconName: FontIcon.ToriiGate,
-      link: Routes.Products,
+      label: FontIconLabel.MyGames,
+      iconName: FontIcon.Chess,
+      link: Routes.MyGames,
     },
     {
       label: FontIconLabel.Invoices,
@@ -66,9 +66,9 @@ const Sidebar: React.FC<SidebarProps> = ({ show }) => {
       link: Routes.Calendar,
     },
     {
-      label: FontIconLabel.HelpCenter,
-      iconName: [FontIconModule.Regular, FontIcon.LifeRing],
-      link: Routes.HelpCenter,
+      label: FontIconLabel.CsvReader,
+      iconName: FontIcon.CsvReader,
+      link: Routes.CsvReader,
     },
     {
       label: FontIconLabel.Settings,

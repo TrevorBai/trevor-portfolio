@@ -10,11 +10,11 @@ const SettingsPage: React.FC<RouteComponentProps> = () => {
   };
 
   return (
-    <header>
+    <div className='settings-container'>
       <h1>Settings</h1>
       <form>
         <label>
-          Pick your favorite theme:
+          <p>Pick your favorite theme:</p>
           <select value={theme} onChange={handleChange}>
             <option value={Themes.Green}>Default</option>
             <option value={Themes.Blue}>Blue</option>
@@ -23,7 +23,7 @@ const SettingsPage: React.FC<RouteComponentProps> = () => {
           </select>
         </label>
       </form>
-    </header>
+    </div>
   );
 };
 

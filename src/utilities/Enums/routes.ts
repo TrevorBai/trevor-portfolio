@@ -1,12 +1,12 @@
 export enum Routes {
   Home = '/',
-  Dashboard = '/mainDash',
-  AboutMe = '/aboutMe',
-  Products = '/products',
+  MyWebsites = '/myWebsites',
+  MyApps = '/myApps',
+  MyGames = '/myGames',
   Invoices = '/invoices',
   MailMarketing = '/mailMarketing',
   ChatRoom = '/chatRoom',
   Calendar = '/calendar',
-  HelpCenter = '/helpCenter',
+  CsvReader = '/csvReader',
   Settings = '/settings',
 }

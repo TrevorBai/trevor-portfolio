@@ -13,18 +13,22 @@ export enum FontIcon {
   RocketChat = 'rocketchat',
   Calendar = 'calendar-alt',
   Cog = 'cog',
+  AppStore = 'app-store',
+  Chess = 'chess',
+  CsvReader = 'file-csv',
+  Chrome = 'chrome'
 }
 
 export enum FontIconLabel {
   Home = 'Home',
-  Dashboard = 'Dashboard',
-  AboutMe = 'About Me',
-  Products = 'Products',
+  MyWebsites = 'My Websites',
+  MyApps = 'My Apps',
+  MyGames = 'My Games',
   Invoices = 'Invoices',
   MailMarketing = 'Mail Marketing',
   ChatRoom = 'Chat Room',
   Calendar = 'Calendar',
-  HelpCenter = 'Help Center',
+  CsvReader = 'CSV Reader',
   Settings = 'Settings',
 }
 
