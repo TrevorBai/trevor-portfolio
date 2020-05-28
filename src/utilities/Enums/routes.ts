@@ -3,7 +3,7 @@ export enum Routes {
   MyWebsites = '/myWebsites',
   MyApps = '/myApps',
   MyGames = '/myGames',
-  Invoices = '/invoices',
+  MyCertificates = '/myCertificates',
   MailMarketing = '/mailMarketing',
   ChatRoom = '/chatRoom',
   Calendar = '/calendar',

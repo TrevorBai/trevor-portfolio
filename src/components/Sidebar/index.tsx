@@ -46,9 +46,9 @@ const Sidebar: React.FC<SidebarProps> = ({ show }) => {
       link: Routes.MyGames,
     },
     {
-      label: FontIconLabel.Invoices,
-      iconName: FontIcon.Receipt,
-      link: Routes.Invoices,
+      label: FontIconLabel.MyCertificates,
+      iconName: FontIcon.Award,
+      link: Routes.MyCertificates,
     },
     {
       label: FontIconLabel.MailMarketing,

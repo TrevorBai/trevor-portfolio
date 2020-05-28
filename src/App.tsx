@@ -14,7 +14,6 @@ import {
   faChartBar,
   faUser,
   faToriiGate,
-  faReceipt,
   faEnvelope,
   faCalendarAlt,
   faCog,
@@ -23,10 +22,13 @@ import {
   faArrowUp,
   faChess,
   faFileCsv,
+  faAward,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from './hoc/Layout';
 import MainPage from './pages/MainPage';
 import SettingsPage from './pages/SettingsPage';
+import CertificatesPage from './pages/CertificatesPage';
+import { Routes } from './utilities';
 
 library.add(
   far,
@@ -40,7 +42,6 @@ library.add(
   faChartBar,
   faUser,
   faToriiGate,
-  faReceipt,
   faEnvelope,
   faRocketchat,
   faCalendarAlt,
@@ -51,14 +52,16 @@ library.add(
   faAppStore,
   faChess,
   faFileCsv,
-  faChrome
+  faChrome,
+  faAward
 );
 
 const App: React.FC = (): JSX.Element => {
   const routes = (
     <Switch>
-      <Route path="/" exact component={MainPage} />
-      <Route path="/settings" render={(props) => <SettingsPage {...props} />} />
+      <Route path={Routes.Home} exact component={MainPage} />
+      <Route path={Routes.Settings} render={(props) => <SettingsPage {...props} />} />
+      <Route path={Routes.MyCertificates} render={(props) => <CertificatesPage {...props} />} />
     </Switch>
   );
 

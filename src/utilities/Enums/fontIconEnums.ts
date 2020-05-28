@@ -8,7 +8,6 @@ export enum FontIcon {
   ChartBar = 'chart-bar',
   User = 'user',
   ToriiGate = 'torii-gate',
-  Receipt = 'receipt',
   Envelope = 'envelope',
   RocketChat = 'rocketchat',
   Calendar = 'calendar-alt',
@@ -16,7 +15,8 @@ export enum FontIcon {
   AppStore = 'app-store',
   Chess = 'chess',
   CsvReader = 'file-csv',
-  Chrome = 'chrome'
+  Chrome = 'chrome',
+  Award = 'award'
 }
 
 export enum FontIconLabel {
@@ -24,7 +24,7 @@ export enum FontIconLabel {
   MyWebsites = 'My Websites',
   MyApps = 'My Apps',
   MyGames = 'My Games',
-  Invoices = 'Invoices',
+  MyCertificates = 'My Certificates',
   MailMarketing = 'Mail Marketing',
   ChatRoom = 'Chat Room',
   Calendar = 'Calendar',
