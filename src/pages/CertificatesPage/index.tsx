@@ -1,21 +1,30 @@
 import React, { useState, FC } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import certDataStructures from '../../assets/images/cert-data-structures-and-algorithms.jpg';
-import certTypeScript from '../../assets/images/cert-typescript.jpg';
-import certHTMLCSS from '../../assets/images/cert-html-css.jpg';
+import certDataStructures from '../../assets/images/certificates/cert-data-structures-and-algorithms.jpg';
+import certTypeScript from '../../assets/images/certificates/cert-typescript.jpg';
+import certHTMLCSS from '../../assets/images/certificates/cert-html-css.jpg';
 import Modal from '../../components/UI/Modal';
 import { Image } from '../../utilities';
 
 const CertificatesPage: FC<RouteComponentProps> = () => {
-
+  const [show, setShow] = useState(false);  // signal transition wrapper in Modal component
   const [image, setImage] = useState<Image>(Image.Nothing);
   const toggleModal = (image: Image) => {
-    setImage(image);
+    if (image !== Image.Nothing) {
+      setImage(image);
+      setShow(true);
+    } else {
+      setShow(false);
+    }
   };
 
   return (
     <div className="certificates-container">
-      <Modal clicked={() => toggleModal(Image.Nothing)} imageEnum={image} />
+      <Modal
+        clicked={() => toggleModal(Image.Nothing)}
+        imageEnum={image}
+        show={show}
+      />
       <h1>Achievements</h1>
       <div className="certificates">
         <img

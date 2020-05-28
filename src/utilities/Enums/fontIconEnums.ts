@@ -1,5 +1,4 @@
 export enum FontIcon {
-  LifeRing = 'life-ring',
   Comments = 'comments',
   Bell = 'bell',
   Bars = 'bars',
@@ -16,7 +15,8 @@ export enum FontIcon {
   Chess = 'chess',
   CsvReader = 'file-csv',
   Chrome = 'chrome',
-  Award = 'award'
+  Award = 'award',
+  App = 'th'
 }
 
 export enum FontIconLabel {

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, FC } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Themes } from '../../utilities/Enums';
 import { ThemeContext } from '../../components/ThemeContext';
 
-const SettingsPage: React.FC<RouteComponentProps> = () => {
+const SettingsPage: FC<RouteComponentProps> = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     setTheme(Themes[event.target.value as Themes]);

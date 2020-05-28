@@ -23,3 +23,25 @@
 .sideBarLabel-exit-done {
   display: none;
 }
+
+// modal scale and opacity animation
+.modalZoom-enter {
+  opacity: 0;
+  @include scale-transform(.6);
+}
+
+.modalZoom-enter-active {
+  opacity: 1;
+  @include transform(x,0);
+  @include transition-group(opacity, transform);
+}
+
+.modalZoom-exit {
+  opacity: 1;
+}
+
+.modalZoom-exit-active {
+  opacity: 0;
+  @include scale-transform(.6);
+  @include transition-group(opacity, transform);
+}

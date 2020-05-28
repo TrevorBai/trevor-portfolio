@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -7,7 +7,6 @@ import { fab, faRocketchat, faAppStore, faChrome } from '@fortawesome/free-brand
 import {
   faBars,
   faComments,
-  faLifeRing,
   faBell,
   faAngleDown,
   faHome,
@@ -23,6 +22,7 @@ import {
   faChess,
   faFileCsv,
   faAward,
+  faTh,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from './hoc/Layout';
 import MainPage from './pages/MainPage';
@@ -35,7 +35,6 @@ library.add(
   fab,
   faBars,
   faComments,
-  faLifeRing,
   faBell,
   faAngleDown,
   faHome,
@@ -53,10 +52,11 @@ library.add(
   faChess,
   faFileCsv,
   faChrome,
-  faAward
+  faAward,
+  faTh
 );
 
-const App: React.FC = (): JSX.Element => {
+const App: FC = (): JSX.Element => {
   const routes = (
     <Switch>
       <Route path={Routes.Home} exact component={MainPage} />

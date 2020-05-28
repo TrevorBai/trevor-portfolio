@@ -1,15 +1,11 @@
-import React from 'react';
-import { Image } from '../../../utilities';
+import React, { FC } from 'react';
 
 interface OverlayProps {
   clicked: () => void;
-  imageEnum: Image;
 }
 
-const Overlay: React.FC<OverlayProps> = ({ imageEnum, clicked }) => {
-  return imageEnum === Image.Nothing ? null : (
-    <div className="overlay" onClick={clicked}></div>
-  );
+const Overlay: FC<OverlayProps> = ({ clicked }) => {
+  return <div className="overlay" onClick={clicked}></div>;
 };
 
 export default Overlay;

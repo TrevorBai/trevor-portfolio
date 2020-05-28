@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 interface TransitionWrapperProps {
@@ -8,7 +8,7 @@ interface TransitionWrapperProps {
   children: JSX.Element;
 }
 
-export const TransitionWrapper: React.FC<TransitionWrapperProps> = ({
+export const TransitionWrapper: FC<TransitionWrapperProps> = ({
   show,
   unmountOnExit,
   name,

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, FC } from 'react';
 import SidebarItem from './SidebarItem';
 import {
   FontIconLabel,
@@ -14,7 +14,7 @@ interface SidebarProps {
   show: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ show }) => {
+const Sidebar: FC<SidebarProps> = ({ show }) => {
   const { theme } = useContext(ThemeContext);
   const themeClass = themeEnumToClass(theme);
 

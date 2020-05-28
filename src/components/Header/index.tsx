@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import avatar from '../../assets/images/avatar.png';
+import React, { useContext, FC } from 'react';
+import avatar from '../../assets/images/avatar/avatar.png';
 import { HeaderItem } from './HeaderItem';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { FontIcon, FontIconModule } from '../../utilities/Enums';
+import { FontIcon } from '../../utilities/Enums';
 import { ThemeContext } from '../ThemeContext';
 import { themeEnumToClass } from '../../utilities';
 
@@ -11,7 +11,7 @@ interface HeaderProps {
   show: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
+const Header: FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
   const { theme } = useContext(ThemeContext);
 
   const themeClass = themeEnumToClass(theme);
@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
 
   const headerItemsCenter: HeaderIconCenterProp[] = [
     {
-      iconName: [FontIconModule.Regular, FontIcon.LifeRing],
+      iconName: FontIcon.App,
     },
     {
       iconName: FontIcon.Comments,

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ThemeContext } from '../../ThemeContext';
@@ -11,7 +11,7 @@ interface HeaderItemProps {
   showOnHover?: Boolean;
 }
 
-export const HeaderItem: React.FC<HeaderItemProps> = ({
+export const HeaderItem: FC<HeaderItemProps> = ({
   clicked,
   icon,
   className,

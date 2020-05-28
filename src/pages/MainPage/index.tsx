@@ -1,5 +1,5 @@
 import React from 'react';
-import avatarLarge from '../../assets/images/avatar_large.jpg';
+import avatarLarge from '../../assets/images/avatar/avatar_large.jpg';
 
 const MainPage = () => {
   return (

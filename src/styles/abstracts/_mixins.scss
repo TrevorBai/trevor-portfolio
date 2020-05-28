@@ -27,6 +27,17 @@
   //**********************************************************
 }
 
+// CSS transition group mixin
+@mixin transition-group($property-one, $property-two, $duration-one: 0.2s, $duration-two: 0.2s) {
+  //**********************************************************
+  transition: #{$property-one} #{$duration-one}, #{$property-two} #{$duration-two};
+  -webkit-transition: #{$property-one} #{$duration-one}, #{$property-two} #{$duration-two};
+  -moz-transition: #{$property-one} #{$duration-one}, #{$property-two} #{$duration-two};
+  -ms-transition: #{$property-one} #{$duration-one}, #{$property-two} #{$duration-two};
+  -o-transition: #{$property-one} #{$duration-one}, #{$property-two} #{$duration-two};
+  //**********************************************************
+}
+
 // CSS transform mixin
 @mixin transform($direction, $offset) {
   @if $direction == x {
@@ -48,6 +59,17 @@
   } @else {
     @error "#{$direction} has not defined.";
   }
+}
+
+// CSS scale transform mixin
+@mixin scale-transform($scale-level) {
+  //**********************************************************
+  transform: scale($scale-level);
+  -webkit-transform: scale($scale-level);
+  -moz-transform: scale($scale-level);
+  -ms-transform: scale($scale-level);
+  -o-transform: scale($scale-level);
+  //**********************************************************
 }
 
 // CSS animation mixin
