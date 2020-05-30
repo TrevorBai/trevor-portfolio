@@ -1,0 +1,53 @@
+.apps-container {
+  .app-container {
+    padding: 2rem 10rem;
+    @include border-box-shadow();
+    @include border-radius();
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: $border-light;
+      width: 60%;
+      margin: 3rem auto;
+    }
+
+    .app-snapshots {
+      display: flex;
+      overflow-x: auto;
+      
+      .app-img {
+        height: 400px;
+        margin-right: 1.1rem;
+        cursor: pointer;
+        @include border-radius();
+        @include border-box-shadow();
+      }
+    }
+  }
+
+  .download-google-icon {
+    padding-left: 2rem;
+  }
+
+  .download-apple-icon {
+    padding-left: 2rem;
+
+    img {
+      height: 60px;
+    }
+  }
+
+  h2 {
+    display: inline;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  i {
+    font-weight: 100;
+    font-size: 1.2rem;
+  }
+}

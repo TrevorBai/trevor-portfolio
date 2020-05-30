@@ -29,6 +29,7 @@ import MainPage from './pages/MainPage';
 import SettingsPage from './pages/SettingsPage';
 import CertificatesPage from './pages/CertificatesPage';
 import { Routes } from './utilities';
+import AppsPage from './pages/AppsPage';
 
 library.add(
   far,
@@ -62,6 +63,7 @@ const App: FC = (): JSX.Element => {
       <Route path={Routes.Home} exact component={MainPage} />
       <Route path={Routes.Settings} render={(props) => <SettingsPage {...props} />} />
       <Route path={Routes.MyCertificates} render={(props) => <CertificatesPage {...props} />} />
+      <Route path={Routes.MyApps} render={(props) => <AppsPage {...props} />} />
     </Switch>
   );
 

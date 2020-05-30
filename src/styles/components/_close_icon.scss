@@ -1,0 +1,12 @@
+.close-icon {
+  position: relative;
+  height: 40px;
+  top: 0.1rem;
+  right: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0 0.75rem;
+  border: 1px solid $border-dark;
+  @include border-radius();
+  cursor: pointer;
+}

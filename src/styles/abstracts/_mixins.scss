@@ -16,6 +16,12 @@
   //***********************************************
 }
 
+// Border box shadow mixin
+@mixin border-box-shadow($border-color: $border-light) {
+  border: 1px solid $border-color;
+  box-shadow: 2px 2px 5px $border-color;
+}
+
 // CSS transition mixin
 @mixin transition($property, $timing-function: ease-out, $duration: 0.2s) {
   //**********************************************************

@@ -4,8 +4,7 @@
   width: 80%;
   margin: 5rem auto 3rem;
   padding: 2rem;
-  border: 1px solid $border-light;
-  box-shadow: 2px 2px 5px $border-light;
+  @include border-box-shadow();
   @include border-radius();
 
   h1 {

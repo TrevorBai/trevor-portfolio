@@ -7,16 +7,11 @@
     grid-template-columns: auto auto;
     grid-row-gap: 70px;
     margin-top: 3rem;
-  }
 
-  .cert-img {
-    width: 600px;
-    box-shadow: 5px 5px 15px $border-dark;
-    cursor: pointer;
-
-    &-big {
-      height: inherit;
+    .cert-img {
+      width: 600px;
+      box-shadow: 5px 5px 15px $border-dark;
+      cursor: pointer;
     }
   }
-
 }

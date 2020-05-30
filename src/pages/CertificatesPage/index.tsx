@@ -5,9 +5,10 @@ import certTypeScript from '../../assets/images/certificates/cert-typescript.jpg
 import certHTMLCSS from '../../assets/images/certificates/cert-html-css.jpg';
 import Modal from '../../components/UI/Modal';
 import { Image } from '../../utilities';
+import { ClickableImage } from '../AppsPage';
 
 const CertificatesPage: FC<RouteComponentProps> = () => {
-  const [show, setShow] = useState(false);  // signal transition wrapper in Modal component
+  const [show, setShow] = useState(false); // signal transition wrapper in Modal component
   const [image, setImage] = useState<Image>(Image.Nothing);
   const toggleModal = (image: Image) => {
     if (image !== Image.Nothing) {
@@ -18,6 +19,27 @@ const CertificatesPage: FC<RouteComponentProps> = () => {
     }
   };
 
+  const certImageArr: ClickableImage[] = [
+    {
+      className: 'cert-img',
+      src: certDataStructures,
+      altName: 'Certificate-Data-Structure-And-Algorithms',
+      click: () => toggleModal(Image.DataStructure),
+    },
+    {
+      className: 'cert-img',
+      src: certTypeScript,
+      altName: 'Certificate-Typescript',
+      click: () => toggleModal(Image.Typescript),
+    },
+    {
+      className: 'cert-img',
+      src: certHTMLCSS,
+      altName: 'Certificate-Html-Css',
+      click: () => toggleModal(Image.HtmlCss),
+    },
+  ];
+
   return (
     <div className="certificates-container">
       <Modal
@@ -27,24 +49,17 @@ const CertificatesPage: FC<RouteComponentProps> = () => {
       />
       <h1>Achievements</h1>
       <div className="certificates">
-        <img
-          className="cert-img"
-          src={certDataStructures}
-          alt="Certificate-Data-Structure-And-Algorithms"
-          onClick={() => toggleModal(Image.DataStructure)}
-        />
-        <img
-          className="cert-img"
-          src={certTypeScript}
-          alt="Certificate-Typescript"
-          onClick={() => toggleModal(Image.Typescript)}
-        />
-        <img
-          className="cert-img"
-          src={certHTMLCSS}
-          alt="Certificate-Html-Css"
-          onClick={() => toggleModal(Image.HtmlCss)}
-        />
+        {certImageArr.map(
+          (certImage: ClickableImage): JSX.Element => (
+            <img
+              key={certImage.src}
+              className={certImage.className}
+              src={certImage.src}
+              alt={certImage.altName}
+              onClick={certImage.click}
+            />
+          )
+        )}
       </div>
     </div>
   );

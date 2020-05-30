@@ -13,6 +13,13 @@ body {
   overflow-x: hidden;
 }
 
+// Global text styles
+.lead {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
 // Global link control
 a {
   text-decoration: none;
