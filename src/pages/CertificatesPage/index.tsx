@@ -3,9 +3,10 @@ import { RouteComponentProps } from 'react-router-dom';
 import certDataStructures from '../../assets/images/certificates/cert-data-structures-and-algorithms.jpg';
 import certTypeScript from '../../assets/images/certificates/cert-typescript.jpg';
 import certHTMLCSS from '../../assets/images/certificates/cert-html-css.jpg';
-import Modal from '../../components/UI/Modal';
-import { Image } from '../../utilities';
+import { Image, ImageClass } from '../../utilities';
 import { ClickableImage } from '../AppsPage';
+import CertificatesModal from '../../components/CertificatesModal';
+import { ImageEnumToString } from '../../components/UI/Modal';
 
 const CertificatesPage: FC<RouteComponentProps> = () => {
   const [show, setShow] = useState(false); // signal transition wrapper in Modal component
@@ -17,6 +18,16 @@ const CertificatesPage: FC<RouteComponentProps> = () => {
     } else {
       setShow(false);
     }
+  };
+  const imgSrc = new Map();
+  imgSrc.set(Image.DataStructure, certDataStructures);
+  imgSrc.set(Image.Typescript, certTypeScript);
+  imgSrc.set(Image.HtmlCss, certHTMLCSS);
+  
+  const imgClassName: ImageEnumToString = {
+    [Image.DataStructure]: ImageClass.Certificate,
+    [Image.HtmlCss]: ImageClass.Certificate,
+    [Image.Typescript]: ImageClass.Certificate
   };
 
   const certImageArr: ClickableImage[] = [
@@ -42,10 +53,12 @@ const CertificatesPage: FC<RouteComponentProps> = () => {
 
   return (
     <div className="certificates-container">
-      <Modal
+      <CertificatesModal
         clicked={() => toggleModal(Image.Nothing)}
         imageEnum={image}
         show={show}
+        imgClassName={imgClassName}
+        imgSrc={imgSrc}
       />
       <h1>Achievements</h1>
       <div className="certificates">

@@ -1,8 +1,8 @@
 export enum Image {
   Nothing,
   DataStructure,
-  HtmlCss,
   Typescript,
+  HtmlCss,
   IphoneSnapshotOne,
   IphoneSnapshotTwo,
   IphoneSnapshotThree,

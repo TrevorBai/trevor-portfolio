@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Modal from '../UI/Modal';
 import { ModalProps } from '../UI/Modal';
 
-const CertificatesModal: FC<ModalProps> = ({
+const AppsModal: FC<ModalProps> = ({
   clicked,
   imageEnum,
   show,
@@ -20,4 +20,4 @@ const CertificatesModal: FC<ModalProps> = ({
   );
 };
 
-export default CertificatesModal;
+export default AppsModal;

@@ -7,8 +7,9 @@ import iphoneSnapshotTwo from '../../assets/images/iphoneSnapshots/iphone2.png';
 import iphoneSnapshotThree from '../../assets/images/iphoneSnapshots/iphone3.png';
 import iphoneSnapshotFour from '../../assets/images/iphoneSnapshots/iphone4.png';
 import iphoneSnapshotFive from '../../assets/images/iphoneSnapshots/iphone5.png';
-import { Image } from '../../utilities';
-import Modal from '../../components/UI/Modal';
+import { Image, ImageClass } from '../../utilities';
+import AppsModal from '../../components/AppsModal';
+import { ImageEnumToString } from '../../components/UI/Modal';
 
 export interface ClickableImage {
   className: string;
@@ -27,6 +28,21 @@ const AppsPage: FC<RouteComponentProps> = () => {
     } else {
       setShow(false);
     }
+  };
+
+  const imgSrc = new Map();
+  imgSrc.set(Image.IphoneSnapshotOne, iphoneSnapshotOne);
+  imgSrc.set(Image.IphoneSnapshotTwo, iphoneSnapshotTwo);
+  imgSrc.set(Image.IphoneSnapshotThree, iphoneSnapshotThree);
+  imgSrc.set(Image.IphoneSnapshotFour, iphoneSnapshotFour);
+  imgSrc.set(Image.IphoneSnapshotFive, iphoneSnapshotFive);
+
+  const imgClassName: ImageEnumToString = {
+    [Image.IphoneSnapshotOne]: ImageClass.App,
+    [Image.IphoneSnapshotTwo]: ImageClass.App,
+    [Image.IphoneSnapshotThree]: ImageClass.App,
+    [Image.IphoneSnapshotFour]: ImageClass.App,
+    [Image.IphoneSnapshotFive]: ImageClass.App,
   };
 
   const imageArr: ClickableImage[] = [
@@ -64,10 +80,12 @@ const AppsPage: FC<RouteComponentProps> = () => {
 
   return (
     <div className="apps-container">
-      <Modal
+      <AppsModal
         clicked={() => toggleModal(Image.Nothing)}
         imageEnum={image}
         show={show}
+        imgClassName={imgClassName}
+        imgSrc={imgSrc}
       />
       <h1>My Apps</h1>
       <br />
@@ -90,7 +108,7 @@ const AppsPage: FC<RouteComponentProps> = () => {
           <img src={downloadAppStore} alt="download-apple-app-store" />
         </a>
         <p className="lead">
-          This mobile application is designed for the 1483 Local of the Canadian
+          This mobile application is designed and developed for the 1483 Local of the Canadian
           Union of Public Employees.
         </p>
         <hr />
@@ -107,7 +125,7 @@ const AppsPage: FC<RouteComponentProps> = () => {
         </div>
         <hr />
         <p className="lead">
-          With this app, registered members will have the ability to: <br />
+          Within the app, registered members will have the ability to: <br />
           🚩 receive push notifications sent by administrators about important
           updates. <br />
           🚩 view the latest news from the union. <br />

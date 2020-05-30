@@ -1,49 +1,34 @@
 import React, { FC } from 'react';
 import Overlay from '../Overlay';
-import { Image, ImageClass } from '../../../utilities';
-import certDataStructures from '../../../assets/images/certificates/cert-data-structures-and-algorithms.jpg';
-import certTypeScript from '../../../assets/images/certificates/cert-typescript.jpg';
-import certHTMLCSS from '../../../assets/images/certificates/cert-html-css.jpg';
-import iphoneSnapshotOne from '../../../assets/images/iphoneSnapshots/iphone1.png';
-import iphoneSnapshotTwo from '../../../assets/images/iphoneSnapshots/iphone2.png';
-import iphoneSnapshotThree from '../../../assets/images/iphoneSnapshots/iphone3.png';
-import iphoneSnapshotFour from '../../../assets/images/iphoneSnapshots/iphone4.png';
-import iphoneSnapshotFive from '../../../assets/images/iphoneSnapshots/iphone5.png';
+import { Image } from '../../../utilities';
 import { TransitionWrapper } from '../../TransitionWrapper';
 import CloseIcon from '../CloseIcon';
 
-interface ModalProps {
+export interface ModalProps {
   clicked: () => void;
   imageEnum: Image;
   show: boolean;
+  imgSrc: Map<Image, string>;  // take advantage of ordered map and its size method
+  imgClassName: ImageEnumToString;
 }
 
-type ImageEnumToString = {
+// Regular object
+export type ImageEnumToString = {
   [key in Image]?: string;
 };
 
-const Modal: FC<ModalProps> = ({ clicked, imageEnum, show }) => {
-  const imgSrc: ImageEnumToString = {
-    [Image.DataStructure]: certDataStructures,
-    [Image.HtmlCss]: certHTMLCSS,
-    [Image.Typescript]: certTypeScript,
-    [Image.IphoneSnapshotOne]: iphoneSnapshotOne,
-    [Image.IphoneSnapshotTwo]: iphoneSnapshotTwo,
-    [Image.IphoneSnapshotThree]: iphoneSnapshotThree,
-    [Image.IphoneSnapshotFour]: iphoneSnapshotFour,
-    [Image.IphoneSnapshotFive]: iphoneSnapshotFive,
-  };
-
-  const imgClassName: ImageEnumToString = {
-    [Image.DataStructure]: ImageClass.Certificate,
-    [Image.HtmlCss]: ImageClass.Certificate,
-    [Image.Typescript]: ImageClass.Certificate,
-    [Image.IphoneSnapshotOne]: ImageClass.App,
-    [Image.IphoneSnapshotTwo]: ImageClass.App,
-    [Image.IphoneSnapshotThree]: ImageClass.App,
-    [Image.IphoneSnapshotFour]: ImageClass.App,
-    [Image.IphoneSnapshotFive]: ImageClass.App,
-  };
+const Modal: FC<ModalProps> = ({
+  clicked,
+  imageEnum,
+  show,
+  imgClassName,
+  imgSrc,
+}) => {
+  console.log('imageEnum :>> ', imageEnum);
+  console.log('imgSrc :>> ', imgSrc);
+  for (let key of imgSrc) {
+    console.log('key :>> ', key);
+  }
 
   return (
     <TransitionWrapper show={show} name="modalZoom" unmountOnExit={true}>
@@ -54,7 +39,7 @@ const Modal: FC<ModalProps> = ({ clicked, imageEnum, show }) => {
         >
           <img
             className={imgClassName[imageEnum]}
-            src={imgSrc[imageEnum]}
+            src={imgSrc.get(imageEnum)}
             alt="Certificate"
           />
           <CloseIcon clicked={clicked} />
