@@ -3,16 +3,17 @@ import { RouteComponentProps } from 'react-router-dom';
 import certDataStructures from '../../assets/images/certificates/cert-data-structures-and-algorithms.jpg';
 import certTypeScript from '../../assets/images/certificates/cert-typescript.jpg';
 import certHTMLCSS from '../../assets/images/certificates/cert-html-css.jpg';
-import { Image, ImageClass } from '../../utilities';
+import { CertificateImage, ImageClass } from '../../utilities';
 import { ClickableImage } from '../AppsPage';
 import CertificatesModal from '../../components/CertificatesModal';
-import { ImageEnumToString } from '../../components/UI/Modal';
 
 const CertificatesPage: FC<RouteComponentProps> = () => {
   const [show, setShow] = useState(false); // signal transition wrapper in Modal component
-  const [image, setImage] = useState<Image>(Image.Nothing);
-  const toggleModal = (image: Image) => {
-    if (image !== Image.Nothing) {
+  const [image, setImage] = useState<CertificateImage>(
+    CertificateImage.Nothing
+  );
+  const toggleModal = (image: CertificateImage) => {
+    if (image !== CertificateImage.Nothing) {
       setImage(image);
       setShow(true);
     } else {
@@ -20,45 +21,49 @@ const CertificatesPage: FC<RouteComponentProps> = () => {
     }
   };
   const imgSrc = new Map();
-  imgSrc.set(Image.DataStructure, certDataStructures);
-  imgSrc.set(Image.Typescript, certTypeScript);
-  imgSrc.set(Image.HtmlCss, certHTMLCSS);
-  
-  const imgClassName: ImageEnumToString = {
-    [Image.DataStructure]: ImageClass.Certificate,
-    [Image.HtmlCss]: ImageClass.Certificate,
-    [Image.Typescript]: ImageClass.Certificate
-  };
+  imgSrc.set(CertificateImage.DataStructure, certDataStructures);
+  imgSrc.set(CertificateImage.Typescript, certTypeScript);
+  imgSrc.set(CertificateImage.HtmlCss, certHTMLCSS);
 
   const certImageArr: ClickableImage[] = [
     {
       className: 'cert-img',
       src: certDataStructures,
       altName: 'Certificate-Data-Structure-And-Algorithms',
-      click: () => toggleModal(Image.DataStructure),
+      click: () => toggleModal(CertificateImage.DataStructure),
     },
     {
       className: 'cert-img',
       src: certTypeScript,
       altName: 'Certificate-Typescript',
-      click: () => toggleModal(Image.Typescript),
+      click: () => toggleModal(CertificateImage.Typescript),
     },
     {
       className: 'cert-img',
       src: certHTMLCSS,
       altName: 'Certificate-Html-Css',
-      click: () => toggleModal(Image.HtmlCss),
+      click: () => toggleModal(CertificateImage.HtmlCss),
     },
   ];
+
+  const renderNextImg = () => {
+    setImage(image + 1);
+  };
+
+  const renderPrevImg = () => {
+    setImage(image - 1);
+  };
 
   return (
     <div className="certificates-container">
       <CertificatesModal
-        clicked={() => toggleModal(Image.Nothing)}
+        clicked={() => toggleModal(CertificateImage.Nothing)}
         imageEnum={image}
         show={show}
-        imgClassName={imgClassName}
+        imgClassName={ImageClass.Certificate}
         imgSrc={imgSrc}
+        browseNext={renderNextImg}
+        browsePrev={renderPrevImg}
       />
       <h1>Achievements</h1>
       <div className="certificates">

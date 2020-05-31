@@ -23,6 +23,8 @@ import {
   faFileCsv,
   faAward,
   faTh,
+  faAngleDoubleRight,
+  faAngleDoubleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from './hoc/Layout';
 import MainPage from './pages/MainPage';
@@ -54,7 +56,9 @@ library.add(
   faFileCsv,
   faChrome,
   faAward,
-  faTh
+  faTh,
+  faAngleDoubleRight,
+  faAngleDoubleLeft
 );
 
 const App: FC = (): JSX.Element => {

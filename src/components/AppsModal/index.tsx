@@ -8,6 +8,8 @@ const AppsModal: FC<ModalProps> = ({
   show,
   imgSrc,
   imgClassName,
+  browseNext,
+  browsePrev
 }) => {
   return (
     <Modal
@@ -16,6 +18,8 @@ const AppsModal: FC<ModalProps> = ({
       show={show}
       imgSrc={imgSrc}
       imgClassName={imgClassName}
+      browseNext={browseNext}
+      browsePrev={browsePrev}
     />
   );
 };

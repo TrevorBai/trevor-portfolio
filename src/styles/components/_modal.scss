@@ -34,4 +34,22 @@
       @include border-radius();
     }
   }
+
+  .prev-modal {
+    z-index: 200;
+    position: absolute;
+    left: 5%;
+    top: 45%;
+    color: white;
+    cursor: pointer;
+  }
+
+  .next-modal {
+    z-index: 200;
+    position: absolute;
+    right: 5%;
+    top: 45%;
+    color: white;
+    cursor: pointer;
+  }
 }

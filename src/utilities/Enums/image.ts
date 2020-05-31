@@ -1,8 +1,12 @@
-export enum Image {
+export enum CertificateImage {
   Nothing,
   DataStructure,
   Typescript,
   HtmlCss,
+}
+
+export enum IphoneSnapshotImage {
+  Nothing,
   IphoneSnapshotOne,
   IphoneSnapshotTwo,
   IphoneSnapshotThree,

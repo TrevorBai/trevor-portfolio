@@ -16,7 +16,9 @@ export enum FontIcon {
   CsvReader = 'file-csv',
   Chrome = 'chrome',
   Award = 'award',
-  App = 'th'
+  App = 'th',
+  DoubleArrowRight = 'angle-double-right',
+  DoubleArrowLeft = 'angle-double-left'
 }
 
 export enum FontIconLabel {

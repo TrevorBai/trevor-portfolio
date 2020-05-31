@@ -1,21 +1,23 @@
 import React, { FC } from 'react';
 import Overlay from '../Overlay';
-import { Image } from '../../../utilities';
+import {
+  CertificateImage,
+  FontIcon,
+  IphoneSnapshotImage,
+} from '../../../utilities';
 import { TransitionWrapper } from '../../TransitionWrapper';
 import CloseIcon from '../CloseIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export interface ModalProps {
   clicked: () => void;
-  imageEnum: Image;
+  imageEnum: CertificateImage | IphoneSnapshotImage;
   show: boolean;
-  imgSrc: Map<Image, string>;  // take advantage of ordered map and its size method
-  imgClassName: ImageEnumToString;
+  imgSrc: Map<CertificateImage | IphoneSnapshotImage, string>; // take advantage of ordered map and its size method
+  imgClassName: string;
+  browseNext: () => void;
+  browsePrev: () => void;
 }
-
-// Regular object
-export type ImageEnumToString = {
-  [key in Image]?: string;
-};
 
 const Modal: FC<ModalProps> = ({
   clicked,
@@ -23,27 +25,40 @@ const Modal: FC<ModalProps> = ({
   show,
   imgClassName,
   imgSrc,
+  browseNext,
+  browsePrev
 }) => {
-  console.log('imageEnum :>> ', imageEnum);
-  console.log('imgSrc :>> ', imgSrc);
-  for (let key of imgSrc) {
-    console.log('key :>> ', key);
-  }
 
   return (
     <TransitionWrapper show={show} name="modalZoom" unmountOnExit={true}>
       <div className="modal">
         <Overlay clicked={clicked} />
         <div
-          className={'modal-img'.concat('-', imgClassName[imageEnum] as string)}
+          className={'modal-img'.concat('-', imgClassName)}
         >
           <img
-            className={imgClassName[imageEnum]}
+            className={imgClassName}
             src={imgSrc.get(imageEnum)}
             alt="Certificate"
           />
           <CloseIcon clicked={clicked} />
         </div>
+        {imageEnum > 1 && (
+          <FontAwesomeIcon
+            icon={FontIcon.DoubleArrowLeft}
+            size="4x"
+            className="prev-modal"
+            onClick={browsePrev}
+          />
+        )}
+        {imageEnum < imgSrc.size && (
+          <FontAwesomeIcon
+            icon={FontIcon.DoubleArrowRight}
+            size="4x"
+            className="next-modal"
+            onClick={browseNext}
+          />
+        )}
       </div>
     </TransitionWrapper>
   );
