@@ -42,7 +42,7 @@ const Header: FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
       >
         {show && (
           <p className="masthead-container-start-bold masthead-container-start-animation-left">
-            trevor dash
+            trev portfolio
           </p>
         )}
         <HeaderItem
@@ -67,7 +67,7 @@ const Header: FC<HeaderProps> = ({ sidebarToggleClicked, show }) => {
                 themeClass && '-color-secondary'
               )}
             >
-              trevor dash
+              trev portfolio
             </p>
           )}
         </div>
