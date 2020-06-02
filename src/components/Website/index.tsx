@@ -4,8 +4,10 @@ export interface WebsiteProps {
   websiteName: string;
   imageSrc: string;
   imageAltName: string;
-  url: string;
+  url?: string;
+  githubUrl: string;
   features: string;
+  deployed: boolean;
 }
 
 const Website: FC<WebsiteProps> = ({
@@ -13,22 +15,38 @@ const Website: FC<WebsiteProps> = ({
   imageSrc,
   imageAltName,
   url,
+  githubUrl,
   features,
+  deployed,
 }) => {
   return (
     <div className="website-container">
       <h2>{websiteName}</h2>
       <img src={imageSrc} alt={imageAltName} />
       <p className="lead">
+        {deployed && (
+          <div>
+            <a
+              className="website-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={url}
+            >
+              Click here
+            </a>{' '}
+            to view the deployed website.
+            <br />
+          </div>
+        )}
         <a
           className="website-link"
           target="_blank"
           rel="noopener noreferrer"
-          href={url}
+          href={githubUrl}
         >
           Click here
         </a>{' '}
-        to view the full website.
+        to view the github source code.
         <br />
         <br />
         Highlighted features: <br />

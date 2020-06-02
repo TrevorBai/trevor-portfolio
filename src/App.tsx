@@ -33,6 +33,7 @@ import CertificatesPage from './pages/CertificatesPage';
 import { Routes } from './utilities';
 import AppsPage from './pages/AppsPage';
 import WebsitesPage from './pages/WebsitesPage';
+import GamesPage from './pages/GamesPage';
 
 library.add(
   far,
@@ -78,6 +79,10 @@ const App: FC = (): JSX.Element => {
       <Route
         path={Routes.MyWebsites}
         render={(props) => <WebsitesPage {...props} />}
+      />
+      <Route
+        path={Routes.MyGames}
+        render={(props) => <GamesPage {...props} />}
       />
     </Switch>
   );
