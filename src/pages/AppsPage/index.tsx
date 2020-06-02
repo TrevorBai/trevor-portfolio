@@ -90,7 +90,7 @@ const AppsPage: FC<RouteComponentProps> = () => {
         browseNext={renderNextImg}
         browsePrev={renderPrevImg}
       />
-      <h1>My Apps</h1>
+      <h1>My App</h1>
       <br />
       <div className="app-container">
         <h2>CUPE-1483</h2>

@@ -51,24 +51,9 @@ const Sidebar: FC<SidebarProps> = ({ show }) => {
       link: Routes.MyCertificates,
     },
     {
-      label: FontIconLabel.MailMarketing,
-      iconName: [FontIconModule.Regular, FontIcon.Envelope],
-      link: Routes.MailMarketing,
-    },
-    {
       label: FontIconLabel.ChatRoom,
       iconName: [FontIconModule.Brands, FontIcon.RocketChat],
       link: Routes.ChatRoom,
-    },
-    {
-      label: FontIconLabel.Calendar,
-      iconName: FontIcon.Calendar,
-      link: Routes.Calendar,
-    },
-    {
-      label: FontIconLabel.CsvReader,
-      iconName: FontIcon.CsvReader,
-      link: Routes.CsvReader,
     },
     {
       label: FontIconLabel.Settings,

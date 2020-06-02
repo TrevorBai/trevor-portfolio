@@ -10,17 +10,11 @@ import {
   faBell,
   faAngleDown,
   faHome,
-  faChartBar,
-  faUser,
-  faToriiGate,
-  faEnvelope,
-  faCalendarAlt,
   faCog,
   faArrowDown,
   faChartLine,
   faArrowUp,
   faChess,
-  faFileCsv,
   faAward,
   faTh,
   faAngleDoubleRight,
@@ -34,6 +28,7 @@ import { Routes } from './utilities';
 import AppsPage from './pages/AppsPage';
 import WebsitesPage from './pages/WebsitesPage';
 import GamesPage from './pages/GamesPage';
+import ChatRoomPage from './pages/ChatRoomPage';
 
 library.add(
   far,
@@ -43,19 +38,13 @@ library.add(
   faBell,
   faAngleDown,
   faHome,
-  faChartBar,
-  faUser,
-  faToriiGate,
-  faEnvelope,
   faRocketchat,
-  faCalendarAlt,
   faCog,
   faArrowDown,
   faArrowUp,
   faChartLine,
   faAppStore,
   faChess,
-  faFileCsv,
   faChrome,
   faAward,
   faTh,
@@ -83,6 +72,10 @@ const App: FC = (): JSX.Element => {
       <Route
         path={Routes.MyGames}
         render={(props) => <GamesPage {...props} />}
+      />
+      <Route
+        path={Routes.ChatRoom}
+        render={(props) => <ChatRoomPage {...props} />}
       />
     </Switch>
   );

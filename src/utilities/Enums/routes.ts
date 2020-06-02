@@ -6,7 +6,6 @@ export enum Routes {
   MyCertificates = '/myCertificates',
   MailMarketing = '/mailMarketing',
   ChatRoom = '/chatRoom',
-  Calendar = '/calendar',
   CsvReader = '/csvReader',
   Settings = '/settings',
 }

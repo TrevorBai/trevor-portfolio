@@ -8,21 +8,17 @@ export const emojiIndent = `\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0`;
 const GamesPage: FC<RouteComponentProps> = () => {
   return (
     <div className="games-container">
-      <h1>My Games</h1>
-      <div className="grid-container">
-        <Website
-          websiteName="Pig Dice Game"
-          imageSrc={pigDiceGame}
-          imageAltName="Pig-Dice-Game"
-          url=""
-          githubUrl=""
-          features={`🚩 two players roll dice successively.
-          🚩 click on HOLD to add round score to the total ${emojiIndent}score.
-          🚩 player looses round score when one of the dices is ${emojiIndent}one.
+      <Website
+        websiteName="Pig Dice Game"
+        imageSrc={pigDiceGame}
+        imageAltName="Pig-Dice-Game"
+        githubUrl="https://github.com/TrevorBai/pig-dice-game"
+        features={`🚩 two players roll dice successively.
+          🚩 click on HOLD to add round score to the total score.
+          🚩 player looses round score when one of the dices is one.
           🚩 first player scores 100 wins.`}
-          deployed={false}
-        />
-      </div>
+        deployed={false}
+      />
     </div>
   );
 };
