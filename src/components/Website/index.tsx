@@ -23,7 +23,7 @@ const Website: FC<WebsiteProps> = ({
     <div className="website-container">
       <h2>{websiteName}</h2>
       <img src={imageSrc} alt={imageAltName} />
-      <p className="lead">
+      <div className="lead">
         {deployed && (
           <div>
             <a
@@ -51,8 +51,8 @@ const Website: FC<WebsiteProps> = ({
         <br />
         Highlighted features: <br />
         <br />
-        {features}
-      </p>
+        <p>{features}</p>
+      </div>
     </div>
   );
 };
