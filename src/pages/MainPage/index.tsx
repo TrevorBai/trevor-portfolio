@@ -7,7 +7,7 @@ const MainPage = () => {
       <img className="round-img" src={avatarLarge} alt="Avatar-Large" />
       <hr />
       <h1><i>biography</i></h1>
-      <p>I possess a <b>Master of Applied Science</b> degree from University of Ottawa, during school time, I designed and developed <b>ROBOT CONTROLLER</b> software. After graduation, I have worked at a robot programming software company ( OCTOPUZ Inc. ) for 2 years as a <b>ROBOTICS APPLICATIONS DEVELOPER</b> where I developed custom robot kinematics and post processors. After that, I have worked on certain contract works including mobile application development and web development. I have a huge passion keeping track of lastest technologies and challenge myself.</p>
+      <p>As an independent contractor, I have designed and developed a couple of web and mobile applications which my clients are satisfied with. It all comes from my previous <b>Robotics Applications Developer</b> experience where I was obsessed in developing efficient software. I possess a <b>Master of Applied Science</b> degree from University of Ottawa which facilitates myself more rapid growth as a developer. I am also good at communicating with clients, providing technical trainings to clients and documenting tutorials.</p>
     </div>
   );
 };
