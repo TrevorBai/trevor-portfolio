@@ -4,12 +4,22 @@ import luLegalServices from '../../assets/images/luLegalServices/lu-legal-servic
 import burgerBuilder from '../../assets/images/burgerBuilder/burger-builder.gif';
 import spacex from '../../assets/images/spacex/spacex.gif';
 import budgetApp from '../../assets/images/budget/budget-app.gif';
+import pathFinder from '../../assets/images/pathFinder/path-finder.gif';
 import Website from '../../components/Website';
 import { WebsiteProps } from '../../components/Website';
 import { emojiIndent } from '../GamesPage';
 
 const WebsitesPage: FC<RouteComponentProps> = () => {
   const websitePool: WebsiteProps[] = [
+    {
+      websiteName: 'Path Finder',
+      imageSrc: pathFinder,
+      imageAltName: 'Path-Finder',
+      githubUrl: 'https://github.com/TrevorBai/path-finding-visualizer',
+      features: `🚩 It allows users to visulize classic Dijkstra's ${emojiIndent}algorithm in real time. 
+      🚩 Users could add walls in the grid, the algorithm still ${emojiIndent}finds the shortest path between the starting node ${emojiIndent}and finishing node by avoiding colliding with walls.`,
+      deployed: false,
+    },
     {
       websiteName: 'Lu Legal Services',
       imageSrc: luLegalServices,
