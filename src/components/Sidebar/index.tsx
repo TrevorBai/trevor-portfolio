@@ -56,6 +56,11 @@ const Sidebar: FC<SidebarProps> = ({ show }) => {
       link: Routes.ChatRoom,
     },
     {
+      label: FontIconLabel.ConnectingDots,
+      iconName: FontIcon.Infinity,
+      link: Routes.ConnectingDots,
+    },
+    {
       label: FontIconLabel.Settings,
       iconName: FontIcon.Cog,
       link: Routes.Settings,

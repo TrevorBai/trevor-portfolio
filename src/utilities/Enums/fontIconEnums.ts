@@ -12,7 +12,8 @@ export enum FontIcon {
   Award = 'award',
   App = 'th',
   DoubleArrowRight = 'angle-double-right',
-  DoubleArrowLeft = 'angle-double-left'
+  DoubleArrowLeft = 'angle-double-left',
+  Infinity = 'infinity'
 }
 
 export enum FontIconLabel {
@@ -23,6 +24,7 @@ export enum FontIconLabel {
   MyCertificates = 'My Certificates',
   ChatRoom = 'Chat Room',
   Settings = 'Settings',
+  ConnectingDots = 'Connecting Dots'
 }
 
 export enum FontIconModule {

@@ -19,6 +19,7 @@ import {
   faTh,
   faAngleDoubleRight,
   faAngleDoubleLeft,
+  faInfinity,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from './hoc/Layout';
 import MainPage from './pages/MainPage';
@@ -29,6 +30,7 @@ import AppsPage from './pages/AppsPage';
 import WebsitesPage from './pages/WebsitesPage';
 import GamesPage from './pages/GamesPage';
 import ChatRoomPage from './pages/ChatRoomPage';
+import ConnectingDots from './pages/ConnectingDotsPage';
 
 library.add(
   far,
@@ -49,7 +51,8 @@ library.add(
   faAward,
   faTh,
   faAngleDoubleRight,
-  faAngleDoubleLeft
+  faAngleDoubleLeft,
+  faInfinity
 );
 
 const App: FC = (): JSX.Element => {
@@ -76,6 +79,10 @@ const App: FC = (): JSX.Element => {
       <Route
         path={Routes.ChatRoom}
         render={(props) => <ChatRoomPage {...props} />}
+      />
+      <Route
+        path={Routes.ConnectingDots}
+        render={(props) => <ConnectingDots {...props} />}
       />
     </Switch>
   );
