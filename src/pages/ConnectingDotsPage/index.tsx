@@ -21,6 +21,9 @@ const ConnectingDots: FC<RouteComponentProps> = () => {
         <p className="courses">
           <i>✔ &nbsp;&nbsp; MIT 6.042J Mathematics for Computer Science</i>
         </p>
+        <p className="courses">
+          <i>✔ &nbsp;&nbsp; MIT 15.S12 Blockchain and Money</i>
+        </p>
         <br />
         <hr />
         <br />
