@@ -7,7 +7,9 @@ const MainPage = () => {
       <img className="round-img" src={avatarLarge} alt="Avatar-Large" />
       <hr />
       <h1><i>biography</i></h1>
-      <p>As an independent contractor, I have designed and developed a couple of web and mobile applications which my clients are satisfied with. It all comes from my previous <b>Robotics Applications Developer</b> experience where I was obsessed in developing efficient software. I possess a <b>Master of Applied Science</b> degree from University of Ottawa which facilitates myself more rapid growth as a developer. I am also good at communicating with clients, providing technical trainings to clients and documenting tutorials.</p>
+      <p>As a software developer, I have recently worked on windows applications using <b>c#</b> and <b>dotnet</b> framework. The applications are
+      regarding to computational geometry and 2D graphics and are solving/automating civil engineering design process.
+      I am also good at building web and mobile apps using React/React Native and Typescript.</p>
     </div>
   );
 };
