@@ -1,0 +1,9 @@
+"node": "10.16.3",  // node -v to check current node version
+"npm": "6.9.0"      // npm -v to check current npm version
+
+node version and npm version is critical. If we update node version to newer one
+such as latest one, it would possiblly force npm version to be updated to a newer version.
+If you JUST switch node version to a newer one using nvm, then you check npm version,
+you would get error possiblly because your npm version is too old to use as current node version.
+
+And json doesn't allow comments, so I would create a dummy notes file.
